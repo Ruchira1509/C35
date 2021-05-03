@@ -1,6 +1,7 @@
 var ball;
 var dataBase;//this variable allows this instance to talk to data base.
 var ballPosition
+var position;
 
 function setup(){
     createCanvas(500,500);
@@ -44,7 +45,7 @@ function readPosition(data){
     ball.y = position.y;
 }
 
-function writePosition(){
+function writePosition(x,y){
     dataBase.ref('ball/position').set({
         x:position.x+x,
         y:position.y+y
